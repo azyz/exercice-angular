@@ -1,0 +1,17 @@
+<li *ngFor="let p of posts" [ngClass]="{'list-group-item': true,
+                'list-group-item-success': p.loveIts > 0,
+                'list-group-item-danger': p.loveIts < 0}">
+
+                <h4> {{p.title}}  <i>{{p.created_at|date:'short'}}</i></h4>
+  <p>
+  	{{p.content}}
+  </p>
+
+
+  <button class="btn btn-success" (click)="like(p.id)">Love It!</button>  
+  &nbsp;
+  <button class="btn btn-danger" (click)="dislike(p.id)">Don't Love It!</button>
+
+
+
+</li>
